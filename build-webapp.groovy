@@ -6,7 +6,7 @@ job {
     scm {
         name('origin')
         git('git@github.com:VividCortex/webapp.git')
-        branch('origin/$BRANCH')
+        branch('origin/BRANCH')
     }
 }
 
