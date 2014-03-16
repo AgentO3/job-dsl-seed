@@ -1,7 +1,7 @@
 def project = 'webapp'
 
 job {
-    name '${project}-build'
+    name "${project}-build"
 
     scm {
         git('git@github.com:VividCortex/${project}.git')
@@ -12,7 +12,7 @@ job {
 }
 
 job {
-    name '${project}-release'
+    name "${project}-release"
 
     scm {
         git('git@github.com:VividCortex/ansible-playbook.git')
