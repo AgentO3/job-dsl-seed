@@ -4,12 +4,8 @@ job {
     name '${project}-build'
 
     scm {
-        git('git@github.com:VividCortex/${project}.git') {
-            branches('origin/master')
-            wipeOutWorkspace(true)
-        }
+        git('git@github.com:VividCortex/${project}.git')
     }
-
     steps {
         shell("echo 'Works'")
     }
@@ -19,13 +15,8 @@ job {
     name '${project}-release'
 
     scm {
-        git('git@github.com:VividCortex/ansible-playbook.git'){
-            branches('origin/master')
-            wipeOutWorkspace(true)
-
-        }
+        git('git@github.com:VividCortex/ansible-playbook.git')
     }
-
     steps {
         shell("echo 'Works'")
     }
