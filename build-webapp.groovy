@@ -5,37 +5,31 @@ job {
 
     parameters {
         stringParam("BRANCH")
+        stringParam("VARS")
     }
 
     scm {
-        git('git@github.com:VividCortex/${project}.git', 'origin/$BRANCH')
+        git("git@github.com:VividCortex/${project}.git", 'origin/$BRANCH')
 
     }
     steps {
-        shell("echo 'Works'")
+        shell("ansible-playbook build.yml -e ${VARS}")
     }
 }
 
 job {
     name "${project}-release"
 
+    parameters {
+        stringParam("ENV")
+        stringParam("VARS")
+        stringParam("BRANCH")
+    }
+
     scm {
-        git('git@github.com:VividCortex/ansible-playbook.git', "origin/master")
+        git('git@github.com:VividCortex/ansible-playbook.git', 'origin/$BRANCH')
     }
     steps {
-        shell("ansible-playbook -i stage ${name}.yml")
+        shell("ansible-playbook -i ${ENV} ${name}.yml -e ${VARS}")
     }
 }
-
-
-//environmentVariables {
-//    scriptFile(String filePath)
-//    script(String content)
-//    env(Object key, Object value)
-//    envs(Map<Object, Object> map)
-//    groovy(String groovyScript)
-//    propertiesFile(String filePath)
-//    loadFilesFromMaster(boolean loadFromMaster)
-//    keepSystemVariables(boolean keepSystemVariables)
-//    keepBuildVariables(boolean keepBuildVariables)
-//}
