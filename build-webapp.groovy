@@ -1,7 +1,7 @@
-job {
-    name 'build-webapp'
+def project = 'webapp'
 
-    stringParam("BRANCH")
+job {
+    name 'build-${project}'
 
     scm {
         name('origin')
@@ -11,7 +11,7 @@ job {
 }
 
 job {
-    name 'release-webapp'
+    name 'release-${project}'
 
     scm {
         origin('origin')
