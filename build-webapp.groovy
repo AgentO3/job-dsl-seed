@@ -30,6 +30,6 @@ job {
         git('git@github.com:VividCortex/ansible-playbook.git', 'origin/$BRANCH')
     }
     steps {
-        shell('ansible-playbook -i $ENV ${name}.yml -e "$VARS"')
+        shell('ansible-playbook -i $ENV '+ name +'.yml -e "$VARS"')
     }
 }
