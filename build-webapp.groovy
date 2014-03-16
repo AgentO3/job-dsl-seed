@@ -8,7 +8,7 @@ job {
     }
 
     scm {
-        git('git@github.com:VividCortex/${project}.git', "origin/master")
+        git('git@github.com:VividCortex/${project}.git', 'origin/$BRANCH')
 
     }
     steps {
