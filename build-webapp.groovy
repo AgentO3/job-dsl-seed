@@ -9,6 +9,10 @@ job {
             wipeOutWorkspace(true)
         }
 
+        steps {
+            shell("")
+        }
+
     }
 }
 
@@ -20,6 +24,10 @@ job {
             branches('origin/master')
             wipeOutWorkspace(true)
 
+        }
+
+        steps {
+            shell("")
         }
 
     }
