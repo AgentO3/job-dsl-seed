@@ -1,24 +1,25 @@
 def project = 'webapp'
 
 job {
-    name 'build-${project}'
+    name '${project}-build'
 
     scm {
         git('git@github.com:VividCortex/${project}.git'){
-            name('origin')
             branches('origin/master')
+            wipeOutWorkspace(true)
         }
 
     }
 }
 
 job {
-    name 'release-${project}'
+    name '${project}-release'
 
     scm {
         git('git@github.com:VividCortex/ansible-playbook.git'){
-            name('origin')
             branches('origin/master')
+            wipeOutWorkspace(true)
+
         }
 
     }
