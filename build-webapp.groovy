@@ -8,11 +8,10 @@ job {
             branches('origin/master')
             wipeOutWorkspace(true)
         }
+    }
 
-        steps {
-            shell('')
-        }
-
+    steps {
+        shell("echo 'Works'")
     }
 }
 
@@ -25,10 +24,9 @@ job {
             wipeOutWorkspace(true)
 
         }
+    }
 
-        steps {
-            shell('')
-        }
-
+    steps {
+        shell("echo 'Works'")
     }
 }
