@@ -4,8 +4,9 @@ job {
     name 'build-${project}'
 
     scm {
-        git('git@github.com:VividCortex/webapp.git')
+        git('git@github.com:VividCortex/${project}.git')
         name('origin')
+        branches('origin/master')
     }
 }
 
@@ -15,5 +16,6 @@ job {
     scm {
         git('git@github.com:VividCortex/ansible-playbook.git')
         name('origin')
+        branches('origin/master')
     }
 }
