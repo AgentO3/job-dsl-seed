@@ -2,7 +2,11 @@ def project = 'webapp'
 
 job {
     name "${project}-build"
-    stringParam("BRANCH")
+
+    parameters {
+        stringParam("BRANCH")
+    }
+
     scm {
         git('git@github.com:VividCortex/${project}.git', "origin/master")
 
