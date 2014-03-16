@@ -4,13 +4,13 @@ job {
     name '${project}-build'
 
     scm {
-        git('git@github.com:VividCortex/${project}.git'){
+        git('git@github.com:VividCortex/${project}.git') {
             branches('origin/master')
             wipeOutWorkspace(true)
         }
 
         steps {
-            shell("")
+            shell('')
         }
 
     }
@@ -27,7 +27,7 @@ job {
         }
 
         steps {
-            shell("")
+            shell('')
         }
 
     }
